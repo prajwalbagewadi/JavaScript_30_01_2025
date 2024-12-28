@@ -67,7 +67,21 @@ let emp = {
   company: "apple",
   sal: 1200000,
 };
+
+let emp1 = {
+  name: "amar",
+  company: "apple",
+  sal: 1200000,
+};
+
+let emp2 = {
+  name: "amit",
+  company: "wipro",
+  sal: 200000,
+};
 console.table(emp);
+console.table(emp1);
+console.table(emp2);
 
 //constant variables
 const username = "amar";
