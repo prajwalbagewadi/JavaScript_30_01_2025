@@ -1,7 +1,12 @@
 //printing methods in JS
-console.log("hello world");
-process.stdout.write("hello World");
-process.stdout.write("hello World");
-console.table({ name: "admin" });
-console.table({ fruits: "pineapple" });
-console.warn({ name: "admin" });
+
+console.log("hello world.");
+
+//works only node JS
+process.stdout.write("hello world . JS");
+
+//key : value -> index : value
+console.table({ name: "abc", ID: 123 });
+
+console.error("Error!");
+console.warn("Warning!");
