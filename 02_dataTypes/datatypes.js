@@ -26,6 +26,8 @@ console.log("type of n1=", typeof n1);
 
 //Datatypes.
 
+//primitive datatypes:
+
 //number
 let num1 = 10;
 console.log("num1", num1);
@@ -88,3 +90,10 @@ console.log("product1=", product1);
 console.log("product1_name=", product1.product_name); //using dot operator
 console.log("product1_name=", product1["product_name"]); //using key as index
 console.log("type of product1", typeof product1);
+
+//constants
+const PI = 3.142;
+console.log("PI=", PI);
+console.log("type of PI=", typeof PI);
+// PI = 3.141; //reassign causes error.
+// console.log("PI=", PI);
