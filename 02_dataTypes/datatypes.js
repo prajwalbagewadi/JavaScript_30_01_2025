@@ -66,3 +66,25 @@ console.log("type of result=", typeof result);
 let temp; //nothing is assigned to a variable not even null
 console.log("temp=", temp);
 console.log("type of temp=", typeof temp);
+
+//non primitive datatypes:
+
+//array
+let basket = ["apples", "mangos", "cherry", "bananas", "grapes"];
+console.log("basket=", basket);
+console.log("basket first item=", basket[0]); //index values to access elements
+console.log("type of basket", typeof basket);
+
+//object - key and value pairs
+let product1 = {
+  product_category: "Biscuits & Cookies",
+  product_name: "Britannia Good Day Cashew",
+  product_id: 101,
+  product_weight: "600gms",
+  product_price: 98.0,
+};
+
+console.log("product1=", product1);
+console.log("product1_name=", product1.product_name); //using dot operator
+console.log("product1_name=", product1["product_name"]); //using key as index
+console.log("type of product1", typeof product1);
