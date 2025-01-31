@@ -5,8 +5,9 @@ console.log("hello world.");
 //works only node JS
 process.stdout.write("hello world . JS");
 
-//key : value -> index : value
+//format key : value -> index : value
 console.table({ name: "abc", ID: 123 });
 
+//error handling.
 console.error("Error!");
 console.warn("Warning!");
