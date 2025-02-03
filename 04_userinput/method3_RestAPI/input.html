@@ -33,7 +33,7 @@
           const result = await response.json();
           document.getElementById(
             "result"
-          ).innerHTML = `<h1>${result.result}</h1>`;
+          ).innerHTML = `<h1>Result:${result.result}</h1>`;
         } catch (err) {
           console.log(err);
         }

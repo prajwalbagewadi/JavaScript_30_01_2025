@@ -85,7 +85,8 @@ console.log("instanceof:", mango instanceof fruits);
 
 // String Operators
 let ename = "Fname" + "Mname" + "Lname";
-ename += "String";
+ename += "prajwal";
+ename += "bagewadi";
 console.log("ename=", ename);
 
 // Chaining Operator (?.)
@@ -102,8 +103,23 @@ let product2 = {
   product_name: "Parle Hide & Seek Chocolate Chip",
   product_id: 102,
   product_weight: "350gms",
-  product_price: { original_price: 150.0 },
+  product_price: { original_price: 150.0, discounted_price: 95.0 },
 };
 
+let product3 = {
+  product_category: "Biscuits & Cookies",
+  product_name: "Sunfeast Mom's Magic Cashew & Almond",
+  product_id: 103,
+  product_weight: "560gms",
+  product_price: { original_price: 150.0, discounted_price: 75.0 },
+};
+
+let product4 = {
+  product_category: "Biscuits & Cookies",
+  product_name: "Sunfeast Dark Fantasy Yumfills Cake",
+  product_id: 104,
+  product_weight: "242gms",
+  product_price: { original_price: 170.0, discounted_price: 62.0 },
+};
 console.log("?.", product1?.product_price?.original_price);
 console.log("?.", product2?.product_price?.discounted_price);
