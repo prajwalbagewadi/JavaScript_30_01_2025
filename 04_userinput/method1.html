@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Method1</title>
+  </head>
+  <body>
+    <form id="calForm">
+      <input type="text" name="" id="n1" placeholder="enter first value" />
+      <input type="text" name="" id="n2" placeholder="enter Second value" />
+      <button type="submit">Calculate</button>
+    </form>
+    <div id="result"></div>
+    <script>
+      const form = document.getElementById("calForm");
+      const result = document.getElementById("result");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const a = parseFloat(document.getElementById("n1").value);
+        const b = parseFloat(document.getElementById("n2").value);
+        let sum = a + b;
+        result.textContent = "result:" + sum;
+      });
+    </script>
+  </body>
+</html>
