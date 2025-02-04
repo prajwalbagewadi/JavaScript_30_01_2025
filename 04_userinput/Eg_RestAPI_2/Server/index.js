@@ -17,10 +17,10 @@ app.post("/api/Exclusive", upload.none(), (req, res) => {
 
   const gstfloat = parseFloat(gst);
 
-  let result = { gst: 0, postgst: 0, pregst: 0 };
+  let result = { gst: 0.0, postgst: 0.0, pregst: 0.0 };
   const per = gstfloat / 100;
   result.gst = amt * per;
-  result.postgst = amt + gstfloat / 100; //118 – [100/(100 + 18%)}],
+  result.postgst = amt + result.gst; //118 – [100/(100 + 18%)}],
   result.pregst = parseFloat((amt * 100) / (100 + gstfloat));
   console.log(result);
   res.json({ result });

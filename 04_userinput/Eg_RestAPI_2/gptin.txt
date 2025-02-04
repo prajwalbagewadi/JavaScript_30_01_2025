@@ -18,6 +18,7 @@
         align-items: center;
         justify-content: center;
         height: 100vh;
+        background-color: #f4f4f4;
       }
       .poppins-regular {
         font-family: "Poppins", serif;
@@ -26,7 +27,7 @@
       }
       .poppins-thin {
         font-family: "Poppins", serif;
-        font-weight: 450;
+        font-weight: 50;
         font-style: normal;
       }
       .content {
@@ -35,6 +36,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
+        gap: 10px;
       }
       .card {
         display: flex;
@@ -42,8 +44,35 @@
         border: 2px solid gray;
         border-radius: 8px;
         max-width: 350px;
-        max-height: 550px;
+        padding: 20px;
+        background-color: white;
+      }
+      .card input,
+      .card button {
+        margin-bottom: 10px;
         padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .card button {
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+      }
+      .card button:hover {
+        background-color: #0056b3;
+      }
+      .card input:focus,
+      .card button:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+      .result h3 {
+        margin: 10px 0;
+        font-size: 18px;
+        color: #333;
       }
     </style>
   </head>
@@ -58,39 +87,47 @@
       </p>
       <div class="poppins-thin">
         <form id="gstform" class="card">
-          <label for="" class="poppins-thin"
-            >💷<input
-              type="text"
-              name="amount"
-              id="amount"
-              placeholder="Enter amount in INR"
-              style="margin-bottom: 4px; padding: 5px; text-align: center"
-          /></label>
-          <label for="" class="poppins-thin"
-            >💷<input
-              type="text"
-              name="gst"
-              id="gst"
-              placeholder="Enter Gst"
-              style="margin-bottom: 4px; padding: 5px; text-align: center"
-            />
-          </label>
-          <button type="submit" style="margin-bottom: 4px">Calculate</button>
+          <input
+            type="text"
+            name="amount"
+            id="amount"
+            placeholder="Enter amount in INR"
+            required
+          />
+          <input
+            type="text"
+            name="gst"
+            id="gst"
+            placeholder="Enter GST Rate (%)"
+            required
+          />
+          <button type="submit">Calculate</button>
         </form>
       </div>
 
-      <!-- <div id="gst"></div> -->
-      <div id="amt"></div>
+      <div id="amt" class="result"></div>
     </div>
 
     <script>
-      //event listener
+      // Event listener for form submission
       document
         .getElementById("gstform")
         .addEventListener("submit", handleSubmit);
 
       async function handleSubmit(event) {
         event.preventDefault();
+
+        const amount = parseFloat(document.getElementById("amount").value);
+        const gst = parseFloat(document.getElementById("gst").value);
+
+        // Input validation
+        if (isNaN(amount) || isNaN(gst) || amount <= 0 || gst <= 0) {
+          alert(
+            "Please enter valid positive numeric values for both amount and GST."
+          );
+          return;
+        }
+
         const formData = new FormData(event.target);
         const formObject = {};
         formData.forEach((val, key) => {
@@ -102,22 +139,24 @@
           method: "POST",
           body: formData,
         });
+
         if (!response) {
-          console.log("error in response");
+          console.log("Error in response");
         }
 
         const result = await response.json();
-        // document.getElementById("gst").innerHTML = ``;
+
+        // Display result in the 'amt' div
         document.getElementById("amt").innerHTML = `
-        <h3 class="poppins-regular">💹 Gst amount in INR:${result.result.gst.toFixed(
-          2
-        )}</h3>
-        <h3 class="poppins-regular">💹 Post_Gst amount in INR:${result.result.postgst.toFixed(
-          2
-        )}</h3>
-        <h3 class="poppins-regular">💹 Pre_Gst amount in INR:${result.result.pregst.toFixed(
-          2
-        )}</h3>
+          <h3 class="poppins-regular">GST amount in INR: ₹${result.result.gst.toFixed(
+            2
+          )}</h3>
+          <h3 class="poppins-regular">Post-GST amount in INR: ₹${result.result.postgst.toFixed(
+            2
+          )}</h3>
+          <h3 class="poppins-regular">Pre-GST amount in INR: ₹${result.result.pregst.toFixed(
+            2
+          )}</h3>
         `;
       }
     </script>
