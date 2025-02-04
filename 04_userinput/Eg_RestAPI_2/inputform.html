@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GstCal</title>
+  </head>
+  <body>
+    <h1>GST calculator RestAPI</h1>
+    <form id="gstform">
+      <input
+        type="text"
+        name="amount"
+        id="amount"
+        placeholder="Enter amount in INR"
+      />
+      <input type="text" name="gst" id="gst" placeholder="Enter Gst" />
+      <button type="submit">Calculate</button>
+    </form>
+
+    <!-- <div id="gst"></div> -->
+    <div id="amt"></div>
+
+    <script>
+      //event listener
+      document
+        .getElementById("gstform")
+        .addEventListener("submit", handleSubmit);
+
+      async function handleSubmit(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const formObject = {};
+        formData.forEach((val, key) => {
+          formObject[key] = val;
+        });
+        console.log("formObject=", formObject);
+
+        const response = await fetch("http://localhost:3000/api/Exclusive", {
+          method: "POST",
+          body: formData,
+        });
+        if (!response) {
+          console.log("error in response");
+        }
+
+        const result = await response.json();
+        // document.getElementById("gst").innerHTML = ``;
+        document.getElementById("amt").innerHTML = `
+        <h3><mark>Gst amount:${result.result.gst}</mark></h3>
+        <h3><mark>PostGst amount:${result.result.postgst}</mark></h3>
+        <h3><mark>PreGst amount:${result.result.pregst}</mark></h3>
+        `;
+      }
+    </script>
+  </body>
+</html>
