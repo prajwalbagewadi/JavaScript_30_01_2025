@@ -1,0 +1,11 @@
+{
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "c:\\Users\\Admin\\Desktop\\FSJ(7-10)\\JS\\05_condStatements\\if.js",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}

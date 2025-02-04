@@ -1,0 +1,69 @@
+Q1)(if_else)problem: On Time for the Exam
+A student has to attend an exam at a particular time (for example at 9:30 am). They arrive in the exam room at a particular time of arrival (for example 9:40 am). It is considered that the student has arrived on time, if they have arrived at the time when the exam starts or up to half an hour earlier. If the student has arrived more than 30 minutes earlier, the student has come too early. If they have arrived after the time when the exam starts, they are late.
+
+Write a program that inputs the exam starting time and the time of student's arrival, and prints if the student has arrived on time, if they have arrived early or if they are late, as well as how many hours or minutes the student is early or late.
+Input Data
+Read the following four integers (one on each line) from the console:
+
+The first line contains exam starting time (hours) – an integer from 0 to 23.
+The second line contains exam starting time (minutes) – an integer from 0 to 59.
+The third line contains hour of arrival – an integer from 0 to 23.
+The fourth line contains minutes of arrival – an integer from 0 to 59.
+Output Data
+Print the following on the first line on the console:
+
+"Late", if the student arrives later compared to the exam starting time.
+"On time", if the student arrives exactly at the exam starting time or up to 30 minutes earlier.
+"Early", if the student arrives more than 30 minutes before the exam starting time.
+If the student arrives with more than one minute difference compared to the exam starting time, print on the next line:
+
+"mm minutes before the start" for arriving less than an hour earlier.
+"hh:mm hours before the start" for arriving 1 hour or earlier. Always print minutes using 2 digits, for example "1:05".
+"mm minutes after the start" for arriving more than an hour late.
+"hh:mm hours after the start" for arriving late with 1 hour or more. Always print minutes using 2 digits, for example "1:03".
+Sample Input and Output
+
+Sample Input :
+9
+30
+8
+45
+Sample Output :
+Early
+45 minutes before the start
+
+Q2)(switch):Problem: Hotel Room
+A hotel offers two types of rooms: studio and apartment. Prices are in INR (Indian Rupee).
+
+Write a program that calculates the price of the whole stay for a studio and apartment. Prices depend on the month of the stay:
+
+May and October June and September July and August
+Studio – 5000 INR/per night Studio – 4500 INR/per night Studio – 4000 INR/per night
+Apartment – 3500 INR/per night Apartment – 3000 INR/per night Apartment – 2500 INR/per night
+The following discounts are also offered:
+
+For a studio, in case of more than 7 stays in May and October: 5% discount.
+For a studio, in case of more than 14 stays in May and October: 30% discount.
+For a studio, in case of more than 14 stays in June and September: 20% discount.
+For an apartment, in case of more than 14 stays, no limitation regarding the month: 10% discount.
+Input Data
+The input data is read from the console and contains exactly two lines:
+
+The first line contains the month – May, June, July, August, September or October.
+The second line is the number of stays – integer within the range [0 … 200].
+Output Data
+Print the following two lines on the console:
+
+On the first line: "Apartment: { price for the whole stay } INR."
+On the second line: "Studio: { price for the whole stay } INR."
+The price for the whole stay must be formatted up to two symbols after the decimal point.
+
+Sample Input and Output
+
+Sample Input 2:
+June
+20
+
+Sample Output 2:
+Apartment: 60000.00 INR.
+Studio: 72000.00 INR.
