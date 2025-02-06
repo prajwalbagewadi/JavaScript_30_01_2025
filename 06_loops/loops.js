@@ -13,6 +13,7 @@
 // });
 
 //const { console } = require("inspector");
+const { log } = require("console");
 const readline = require("readline");
 const rl = readline.createInterface({
   input: process.stdin,
@@ -129,17 +130,31 @@ Prints out the department number, its corresponding percentage, and the budget a
 */
 let tot_budget = 1000;
 let dept = 5;
-let percentage = [50, 60, 40, 30, 20];
+let percentage = [4, 7, 15, 71, 3];
 percentage.sort();
 percentage.reverse();
+console.log(percentage);
+total = 0;
+percentage.forEach((p) => {
+  total += parseFloat(percentage);
+});
+console.log("total percentage=", total);
+
 for (let i = 0; i < dept; i++) {
   let budget = tot_budget * (percentage[i] / 100);
-  console.log("dept=", i + 1, "percentage=", percentage[i], "budget=", budget);
+  console.log(
+    "dept=",
+    i + 1,
+    "percentage=",
+    percentage[i],
+    "budget=",
+    budget.toFixed(2)
+  );
   if (tot_budget >= budget) {
     tot_budget -= budget;
-    console.log("remaining buget:", tot_budget);
+    console.log("remaining buget:", tot_budget.toFixed(2));
   } else {
-    console.log("remaining buget is less:", tot_budget);
+    console.log("remaining buget is less:", tot_budget.toFixed(2));
     break;
   }
 }
