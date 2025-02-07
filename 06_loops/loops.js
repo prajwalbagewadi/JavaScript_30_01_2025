@@ -38,14 +38,14 @@ const rl = readline.createInterface({
 //   i++;
 // }
 
-let str = "cherry";
-let emptystr = "";
-let i = 0;
-while (i < 6) {
-  emptystr += str[i] + "🍒";
-  i++;
-}
-console.log("emptystr=", emptystr);
+// let str = "cherry";
+// let emptystr = "";
+// let i = 0;
+// while (i < 6) {
+//   emptystr += str[i] + "🍒";
+//   i++;
+// }
+// console.log("emptystr=", emptystr);
 
 //question:
 /*
@@ -72,18 +72,18 @@ after the monkey has walked through all the doors.
 // console.log("opendoors=", opendoor);
 // console.log("closedoors=", closedoor);
 
-let monkey = 26;
-let closedoor = 100;
-let opendoor = 0;
-for (let d = 1; d <= 100; d++) {
-  if (d % monkey == 0) {
-    opendoor++;
-    console.log("opened=", d);
-    closedoor--;
-  }
-}
-console.log("opendoors=", opendoor);
-console.log("closedoors=", closedoor);
+// let monkey = 26;
+// let closedoor = 100;
+// let opendoor = 0;
+// for (let d = 1; d <= 100; d++) {
+//   if (d % monkey == 0) {
+//     opendoor++;
+//     console.log("opened=", d);
+//     closedoor--;
+//   }
+// }
+// console.log("opendoors=", opendoor);
+// console.log("closedoors=", closedoor);
 
 //do-while loop
 
@@ -104,12 +104,12 @@ you have left after each round of distribution, stopping when there are fewer th
 //   console.log(num);
 //   num -= 9;
 // } while (num >= 9);
-let giftbags = 100;
-let dist = 7;
-do {
-  console.log("after round remining gift bags:", giftbags);
-  giftbags -= dist;
-} while (giftbags >= dist);
+// let giftbags = 100;
+// let dist = 7;
+// do {
+//   console.log("after round remining gift bags:", giftbags);
+//   giftbags -= dist;
+// } while (giftbags >= dist);
 
 //for loop
 // for (let i = 0; i < 10; i++) {
@@ -128,36 +128,36 @@ Takes the total budget and an array of percentages.
 Allocates the budget to each department based on the provided percentages.
 Prints out the department number, its corresponding percentage, and the budget allocated to it.
 */
-let tot_budget = 1000;
-let dept = 5;
-let percentage = [4, 7, 15, 71, 3];
-percentage.sort();
-percentage.reverse();
-console.log(percentage);
-total = 0;
-percentage.forEach((p) => {
-  total += parseFloat(percentage);
-});
-console.log("total percentage=", total);
+// let tot_budget = 1000;
+// let dept = 5;
+// let percentage = [4, 7, 15, 71, 3];
+// percentage.sort();
+// percentage.reverse();
+// console.log(percentage);
+// total = 0;
+// percentage.forEach((p) => {
+//   total += parseFloat(percentage);
+// });
+// console.log("total percentage=", total);
 
-for (let i = 0; i < dept; i++) {
-  let budget = tot_budget * (percentage[i] / 100);
-  console.log(
-    "dept=",
-    i + 1,
-    "percentage=",
-    percentage[i],
-    "budget=",
-    budget.toFixed(2)
-  );
-  if (tot_budget >= budget) {
-    tot_budget -= budget;
-    console.log("remaining buget:", tot_budget.toFixed(2));
-  } else {
-    console.log("remaining buget is less:", tot_budget.toFixed(2));
-    break;
-  }
-}
+// for (let i = 0; i < dept; i++) {
+//   let budget = tot_budget * (percentage[i] / 100);
+//   console.log(
+//     "dept=",
+//     i + 1,
+//     "percentage=",
+//     percentage[i],
+//     "budget=",
+//     budget.toFixed(2)
+//   );
+//   if (tot_budget >= budget) {
+//     tot_budget -= budget;
+//     console.log("remaining buget:", tot_budget.toFixed(2));
+//   } else {
+//     console.log("remaining buget is less:", tot_budget.toFixed(2));
+//     break;
+//   }
+// }
 
 //for of loop
 // let fruits = ["apple", "cherry", "papaya"];
@@ -172,12 +172,12 @@ for (let i = 0; i < dept; i++) {
 // }
 
 //forEach loop
-// let str1 = "pineapple";
-// str1.split("").forEach((c) => {
-//   console.log(c, "=>", "from pineapple");
-// });
+let str1 = "pineapple";
+str1.split("").forEach((c) => {
+  console.log(c, "=>", "from pineapple");
+});
 
-// let fruits1 = ["apple", "cherry", "papaya"];
-// fruits1.forEach((f) => {
-//   console.log(f, ":is a fruit");
-// });
+let fruits1 = ["apple", "cherry", "papaya"];
+fruits1.forEach((f) => {
+  console.log(f, ":is a fruit");
+});
