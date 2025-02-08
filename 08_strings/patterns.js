@@ -44,8 +44,8 @@ $: Anchors the pattern to the end of the string
 ?: Matches 0 or 1 occurrence of the preceding element
 */
 
-let regex = /he..o/;
-console.log(".", regex.test("he..o"));
+let regex = /l./;
+console.log(".", regex.test("hel.o"));
 
 regex = /^hello world/;
 console.log("^", regex.test("hello world"));
@@ -67,7 +67,7 @@ regex = /\s/;
 console.log("\\s", regex.test("abc 123"));
 console.log("\\s", regex.test("abc123"));
 
-regex = /ol*/;
+regex = /l*/;
 console.log("*", regex.test("ola"));
 console.log("*", regex.test("oa"));
 console.log("*", regex.test("la"));
@@ -90,4 +90,4 @@ console.log("?", regex.test("mmney"));
 // 5555 5555 5555 4444	MasterCard	APPROVED
 // format one occurance or more of 5 5 5 4
 regex = /^(5+\d{3})\s(5+\d{3})\s(5+\d{3})\s(\d{3}4$)/;
-console.log(regex.test("5555 5537 5304 8194"));
+console.log(regex.test("5455 5537 5304 8194"));

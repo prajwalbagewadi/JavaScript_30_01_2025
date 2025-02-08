@@ -71,7 +71,7 @@
               type="text"
               name="gst"
               id="gst"
-              placeholder="Enter Gst"
+              placeholder="Enter Gst Percentage"
               style="margin-bottom: 4px; padding: 5px; text-align: center"
             />
           </label>
@@ -109,13 +109,28 @@
         const result = await response.json();
         // document.getElementById("gst").innerHTML = ``;
         document.getElementById("amt").innerHTML = `
-        <h3 class="poppins-regular">💹 Gst amount in INR:${result.result.gst.toFixed(
+        <h3 class="poppins-regular">💹 Gst for Exclusive amount in INR:${result.result.gst_exc.toFixed(
           2
         )}</h3>
-        <h3 class="poppins-regular">💹 Post_Gst amount in INR:${result.result.postgst.toFixed(
+        <h3 class="poppins-regular">💹 Gst for Inclusive amount in INR:${result.result.gst_inc.toFixed(
           2
         )}</h3>
-        <h3 class="poppins-regular">💹 Pre_Gst amount in INR:${result.result.pregst.toFixed(
+        <h3 class="poppins-regular">💹 Gst_Exclusive amount in INR:${result.result.postgst.toFixed(
+          2
+        )}</h3>
+        <h3 class="poppins-regular">💹 Gst_Inclusive amount in INR:${result.result.pregst.toFixed(
+          2
+        )}</h3>
+        <h3 class="poppins-regular">💹 Centeral_Gst percentage in %:${result.result.cgst.toFixed(
+          2
+        )}</h3>
+        <h3 class="poppins-regular">💹 State_Gst percentage in %:${result.result.sgst.toFixed(
+          2
+        )}</h3>
+        <h3 class="poppins-regular">💹 Centeral_Gst amount in INR:${result.result.cgst_amt.toFixed(
+          2
+        )}</h3>
+        <h3 class="poppins-regular">💹 State_Gst amount in INR:${result.result.sgst_amt.toFixed(
           2
         )}</h3>
         `;

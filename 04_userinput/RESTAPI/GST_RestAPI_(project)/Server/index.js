@@ -17,12 +17,26 @@ app.post("/api/Exclusive", upload.none(), (req, res) => {
 
   const gstfloat = parseFloat(gst);
 
-  let result = { gst: 0.0, postgst: 0.0, pregst: 0.0 };
+  let result = {
+    gst_exc: 0.0,
+    gst_inc: 0.0,
+    postgst: 0.0,
+    pregst: 0.0,
+    cgst: 0.0,
+    sgst: 0.0,
+    cgst_amt: 0.0,
+    sgst_amt: 0.0,
+  };
   const per = gstfloat / 100;
-  result.gst = amt * per;
-  result.postgst = amt + result.gst; //118 – [100/(100 + 18%)}],
+  result.gst_exc = amt * per;
+  result.gst_inc = amt - amt / (1 + gstfloat / 100);
+  result.postgst = amt + result.gst_exc; //118 – [100/(100 + 18%)}],
   result.pregst = parseFloat((amt * 100) / (100 + gstfloat));
-  console.log(result);
+  result.cgst = (per / 2) * 100;
+  result.sgst = (per / 2) * 100;
+  result.cgst_amt = result.gst_exc / 2;
+  result.sgst_amt = result.gst_exc / 2;
+
   res.json({ result });
 });
 
