@@ -59,11 +59,42 @@ fruitbasket.forEach(function (fruit) {
 let bigfruits = fruitbasket.map((fruit) => fruit.toUpperCase());
 console.log("bigfruits=", bigfruits);
 console.log("type of bigfruits:", typeof bigfruits);
+//question : Scenario: You have a list of people’s ages in an array,
+// and you want to create a new array that categorizes each person as either a "minor" or "adult"
+// based on their age.
+let ages = [
+  33, 28, 9, 46, 29, 20, 52, 47, 87, 62, 25, 23, 74, 43, 93, 53, 95, 73, 7, 11,
+  45, 21, 67, 49, 14,
+];
+
+let categories = ages.map((age) => {
+  if (age >= 21) {
+    return "Adult";
+  } else {
+    return "Minor";
+  }
+});
+console.log("categories=", categories);
 
 //filter() - Creates a new array with all elements that pass a test.
 let num = [69, 37, 73, 2, 74];
 let arrsmall = num.filter((n) => n <= 50);
 console.log("arrsmall", arrsmall);
+
+// Filter Expired Products
+// Scenario: You have a list of products where each product has a name, expirationDate, and isInStock property.
+// You need to create a new array containing only the
+// products that have expired (i.e., the expirationDate is less than today’s date).
+let products = [
+  { name: "milk", erxpireDate: new Date(25, 1, 7), isINStock: true },
+  { name: "cheese", erxpireDate: new Date(25, 2, 7), isINStock: true },
+  { name: "yoghurt", erxpireDate: new Date(25, 1, 1), isINStock: true },
+];
+
+let today = new Date(25, 2, 7);
+
+let expiredProducts = products.filter((product) => product.erxpireDate < today);
+console.log(" expiredProducts=", expiredProducts);
 
 //2d array
 let arr2d = [
@@ -104,7 +135,7 @@ add 4(fourthElement) to (previous output)6 -> 10
 add 5(fifthElement) to (previous output)10 -> 15
 */
 
-//find() - Finds the first element that satisfies the provided testing function
+//find() - Finds the first element that satisfies the provided testing function and returns
 numbers = [1, 2, 3, 4, 5];
 let found = numbers.find((num) => num > 2);
 console.log("found=", found);
@@ -123,6 +154,23 @@ console.log("slice=", slice);
 
 //sort() - Sorts the array in place
 let uns = [28, 33, 32, 53, 8];
+/*
+28 - 33 = -5
+33 - 32 = 1 (32,33)
+33 - 53 = -20
+53 - 8 = 45 (8,45)
+
+28 32 33 8 53
+33 - 8 = 25 (8,33)
+
+28 32 8 33 53
+32 - 8 = 24
+
+28 8 32 33 53 
+28 - 8 = 20
+
+8 28 32 33 53
+*/
 console.log("uns=", uns);
 uns.sort((a, b) => a - b); //ascending
 console.log("uns=", uns);
