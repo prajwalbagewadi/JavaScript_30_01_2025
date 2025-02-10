@@ -10,7 +10,7 @@ sayHello(); //function call
 const user = {
   name: "bixby",
   greet: function () {
-    console.log("hello", this.name);
+    console.log("hello", this.name); //this keyword reffers to current object user.
   },
 };
 user.greet();
@@ -106,4 +106,5 @@ async function fetchData() {
   console.log("data=", data);
 }
 fetchData();
+
 //https://reqres.in/ :Test  front-end against  real API
