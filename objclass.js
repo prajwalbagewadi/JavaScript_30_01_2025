@@ -61,10 +61,11 @@ console.log("len=", Object.keys(product3).length);
 let product4 = {
   name: "cherry",
   wt: "500gm",
-  display: () => {
+  display: function () {
     console.log("name:", this.name, " wt=", this.wt);
   },
 };
+product4.display();
 
 /*Q)
 Scenario:
@@ -87,6 +88,54 @@ Displaying total inventory value: Calculate and display the total value of the i
 
 */
 
+let inventory = [];
+let removed = [];
+function addProduct(pname, pquantity, pprice, pcategory) {
+  inventory.push({
+    name: pname,
+    quantity: pquantity,
+    price: pprice,
+    category: pcategory,
+  });
+}
+
+addProduct("apple", 50, 15.0, "fruit");
+addProduct("cherry", 150, 120.0, "fruit");
+addProduct("grapes", 150, 80.0, "fruit");
+
+addProduct("onion", 150, 50.0, "vegetable");
+addProduct("potato", 140, 30.0, "vegetable");
+addProduct("totmato", 150, 20.0, "vegetable");
+
+addProduct("milk", 150, 58.0, "dairy");
+addProduct("curd", 140, 10.0, "dairy");
+
+addProduct("bread", 150, 28.0, "bakery");
+addProduct("bscuits", 150, 25.0, "bakery");
+
+console.log(inventory);
+
+function removeProduct(pname) {
+  for (let i = 0; i < inventory.length; i++) {
+    if (inventory[i].name == pname) {
+      removed = inventory.slice(i, i + 1);
+      inventory[i] = null;
+    }
+  }
+}
+removeProduct("milk");
+console.log(inventory);
+console.log(removed);
+
+function updateProduct(pname, pcat, pprice, pquan) {
+  for (let i = 0; i < inventory; i++) {
+    if (inventory[i].name === pname) {
+      console.log(inventory[i].name);
+    }
+  }
+}
+updateProduct("apple", "fruit", 14, 51);
+console.log(inventory);
 //classes and objects
 class Bike {
   brand;
