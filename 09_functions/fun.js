@@ -95,6 +95,7 @@ const numbers = counter(10);
 console.log("counter=", numbers.next());
 console.log("counter=", numbers.next());
 console.log("counter=", numbers.next());
+console.log("counter=", numbers.next());
 
 //Async Functions: Async functions return a Promise and are used for handling asynchronous operations. You use the async keyword before the function.
 async function fetchData() {
@@ -102,7 +103,7 @@ async function fetchData() {
     method: "GET",
     body: null,
   });
-  const data = await response.json();
+  const data = await response.json(); //stops excution until api request is fullfilled
   console.log("data=", data);
 }
 fetchData();
