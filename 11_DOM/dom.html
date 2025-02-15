@@ -43,8 +43,10 @@ Elements like <div>, <p>, <a>, etc., are nested within the body.
     // console.log("getElementById:", content);
     // console.log("getElementById:", contenttext);
 
-    // let content1 = document.getElementsByClassName("getelebyclass")[0]; // Get the first element with the class
+    // let content1 = document.getElementsByClassName("getelebyclass");
+    // let content2 = document.getElementsByClassName("getelebyclass")[0]; // Get the first element with the class
     // console.log("getElementsByClassName:", content1);
+    // console.log("getElementsByClassName:", content2);
 
     // let c = document.getElementsByTagName("article");
     // console.log("getElementsByTagName:", c);
@@ -65,14 +67,14 @@ Elements like <div>, <p>, <a>, etc., are nested within the body.
     //manipulation
 
     //Change text content:
-    //document.getElementById("manip1").textContent = "testmsg";
+    document.getElementById("manip1").textContent = "testmsg";
     // Change HTML content:
-    //document.getElementById("manip2").innerHTML = "<em>emphasized</em>";
+    document.getElementById("manip2").innerHTML = "<em>emphasized</em>";
     //Change attributes:
-    // document
-    //   .getElementById("manip3")
-    //   .setAttribute("style", "background-color:Tomato");
-    // document.getElementById("manip3").textContent = "testing";
+    document
+      .getElementById("manip3")
+      .setAttribute("style", "background-color:Tomato");
+    document.getElementById("manip3").textContent = "testing";
     //Change styles:
     document.getElementById("manip4").style.border = "2px solid SlateBlue";
     document.getElementById("manip4").textContent = "testval";
@@ -85,7 +87,7 @@ Elements like <div>, <p>, <a>, etc., are nested within the body.
     // Append elements:
     document.getElementById("appendparent").append(newDiv);
     // Remove elements:
-    newDiv.remove();
+    //newDiv.remove();
 
     /*
     In JavaScript, the addEventListener() method is used to attach an event to an element.
