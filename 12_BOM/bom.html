@@ -22,6 +22,8 @@ user interactions. */
     <button id="link">React.dev</button>
     <p id="msg"></p>
     <a href="f1.html">f1.html</a>
+    <a href="cookieview.html">cookieview.html</a>
+    <a href="sessionview.html">sessionview.html</a>
     <button id="forward">forward</button>
     <button id="f+2">forward 2</button>
   </body>
@@ -133,18 +135,46 @@ user interactions. */
     //deleteCookie("username")
 
     //confirm if deleted or  is unset
-    if (cookie) {
-      console.log("cookie=", document.cookie);
+    if (document.cookie) {
+      if (document.cookie.name == "username") {
+        console.log("cookie=", document.cookie);
+      }
     } else {
       console.log("cookie expired");
     }
 
     //session
     // setItem(key, value): Store data.
+    let exptime = new Date();
+    exptime.setTime(Date.now() + 5 * 1000);
+    sessionStorage.setItem(
+      "password",
+      JSON.stringify({ value: "1234", expiresAt: exptime })
+    );
+
+    window.setTimeout(() => {
+      alert(`6 sec completed`);
+    }, 6000);
+
+    // window.setTimeout(() => {
+    //   alert(`sessionStorage.key(): ${sessionStorage.key(0)}`);
+    // }, 6000);
+
     // getItem(key): Retrieve data.
+    console.log("session:", sessionStorage.getItem("password"));
     // removeItem(key): Remove specific data.
+    //sessionStorage.removeItem("password");
+    console.log(
+      "sessionStorage.removeItem:",
+      sessionStorage.getItem("password")
+    );
     // clear(): Clear all session data.
+    //sessionStorage.clear();
+    console.log("sessionStorage.clear();", sessionStorage.key(0));
     // length: Get the number of stored items.
+
+    console.log("sessionStorage.length;", sessionStorage.length);
     // key(index): Get a key by its index
+    console.log("sessionStorage.key();", sessionStorage.key(0));
   </script>
 </html>
