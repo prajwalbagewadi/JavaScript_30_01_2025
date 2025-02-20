@@ -132,7 +132,7 @@ user interactions. */
       document.cookie =
         name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
     }
-    //deleteCookie("username")
+    deleteCookie("username");
 
     //confirm if deleted or  is unset
     if (document.cookie) {
@@ -147,9 +147,10 @@ user interactions. */
     // setItem(key, value): Store data.
     let exptime = new Date();
     exptime.setTime(Date.now() + 5 * 1000);
+    let extime = exptime.toUTCString();
     sessionStorage.setItem(
       "password",
-      JSON.stringify({ value: "1234", expiresAt: exptime })
+      JSON.stringify({ value: "1234", expiresAt: extime })
     );
 
     window.setTimeout(() => {
