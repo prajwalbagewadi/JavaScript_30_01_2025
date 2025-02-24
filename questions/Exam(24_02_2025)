@@ -1,0 +1,16 @@
+Write a JavaScript program for accepting name and mobile number from user and
+perform following validation: [20 Marks]
+a) Check all fields should not contain a null value
+b) Check name field contains only alphabets
+c) Mobile No. field should be of 10 digits long.
+
+Q2. Write a JavaScript function to validate email-id using regular expression. [20 Marks]
+
+Q2. Write a JavaScript program to accept a number from user and display that number in
+words (e.g. 226 Two Two Six)
+
+Q2. Write a JavaScript program to compare the values of password and confirmed password
+field and display message accordingly. Also perform the validation to check any of the
+field should not be empty.
+
+Q2. Write a JavaScript code to greet the user according to the current timing. [20 Marks]
